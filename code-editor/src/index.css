@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+}
+
+.top-pane {
+background-color: hsl(225, 6%, 25%);
+}
+
+.pane{
+  height: 60vh;
+  display: flex;
+}
+
+.editor-container{
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  background-color: hsl(225, 6%, 25%);
+}
+
+.editor-container.collapsed{
+  flex-grow: 0;  /* This is to make sure that the column does not grow at all*/
+}
+
+.editor-container.collapsed .CodeMirror-scroll{
+  position: absolute;  /* To close the column as small as possible ( by changing the settings of CodeMirror-scroll class)*/
+  overflow: hidden !important; /* To make sure that there are no ready made scroll bar in the editor column (making mandatory changes in the scroll class)*/
+}
+
+.editor-title{
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(225, 6%, 13%);
+  color: white;
+  padding: .5rem .5rem .5rem 1rem;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+}
+
+.CodeMirror{
+  height: 100% !important;  /*To override the existing styles of CodeMirror*/
+}
+
+.code-mirror-wrapper{
+  flex-grow: 1;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  overflow: hidden;
+}
+
+.expand-collapse-button{
+  margin-left: .5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
